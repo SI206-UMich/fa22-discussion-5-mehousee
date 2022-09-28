@@ -58,7 +58,6 @@ class Warehouse:
 				temp = item
 		return temp	
 
-
 # Tests
 class TestAllMethods(unittest.TestCase):
 
@@ -101,7 +100,19 @@ class TestAllMethods(unittest.TestCase):
 
 	# Check to see whether the warehouse correctly return the item with the highest price
 	def test_warehouse_max_price(self):
-		pass
+		# self.item1 = Item("Beer", 6, 20)
+		# self.item2 = Item("Cider", 5, 25)
+		# self.item3 = Item("Water", 1, 100)
+		# self.item4 = Item("Fanta", 2, 60)
+		# self.item5 = Item("CocaCola", 3, 40)
+
+		meijer = Warehouse([self.item4, self.item5])
+		max_price = meijer.get_max_price()
+		self.assertEqual(max_price, self.item5)
+
+		meijer.add_item(self.item1)
+		max_price_new = meijer.get_max_price()
+		self.assertEqual(max_price_new, self.item1)
 		
 
 def main():
